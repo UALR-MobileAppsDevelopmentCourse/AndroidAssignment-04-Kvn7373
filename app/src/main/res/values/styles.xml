@@ -60,6 +60,8 @@
     <style name="EditText.Blue" parent="Widget.AppCompat.EditText">
         <item name="backgroundTint">@color/colorPrimary</item>
         <item name="android:ems">10</item>
+        <item name="android:hint">@string/_00_00</item>
+
     </style>
 
     <style name="Button.Outlined.White" parent="Widget.MaterialComponents.Button.OutlinedButton">

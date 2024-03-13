@@ -19,11 +19,11 @@
             style="@style/Chip.Blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="32dp"
             android:text="@string/scan_chip"
             app:chipIcon="@drawable/ic_center_focus_weak_chip"
-            app:layout_constraintEnd_toStartOf="@+id/topup_chip"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,39 +32,41 @@
             style="@style/Chip.Blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/top_up_chip"
             app:chipIcon="@drawable/ic_add_circle_outline_chip"
+            app:layout_constraintBottom_toBottomOf="@+id/scan_chip"
             app:layout_constraintEnd_toStartOf="@+id/send_chip"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/scan_chip"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/scan_chip" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/send_chip"
             style="@style/Chip.Blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="@string/send_chip"
             app:chipIcon="@drawable/ic_open_in_new_chip"
+            app:layout_constraintBottom_toBottomOf="@+id/topup_chip"
             app:layout_constraintEnd_toStartOf="@+id/request_chip"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/topup_chip"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/topup_chip" />
 
         <com.google.android.material.chip.Chip
             android:id="@+id/request_chip"
             style="@style/Chip.Blue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
             android:text="@string/request_chip"
             app:chipIcon="@drawable/ic_open_in_new_rotated_chip"
+            app:layout_constraintBottom_toBottomOf="@+id/send_chip"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/send_chip"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/send_chip" />
 
         <androidx.cardview.widget.CardView
 
@@ -74,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginTop="32dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -83,10 +85,10 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="168dp">
+                android:layout_height="match_parent">
+
 
                 <com.google.android.material.button.MaterialButton
-
                     android:id="@+id/electric_btn"
                     style="@style/Button.Blue.Borderless"
                     android:layout_marginTop="16dp"
@@ -112,12 +114,13 @@
 
                 <ImageButton
                     android:id="@+id/phone_logo"
-                    android:layout_width="@dimen/actionBarSize"
+                    android:layout_width="56dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
-                    android:background="@android:color/white"
-                    android:scaleType="fitCenter"
+                    android:background="@color/transparent"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:layout_constraintBottom_toBottomOf="@+id/bonus_text"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/pulsa_text"
@@ -194,12 +197,13 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview2"
             style="@style/CardView.White"
-            android:layout_width="0dp"
-            android:layout_height="272dp"
+            android:layout_width="360dp"
+            android:layout_height="370dp"
             android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginTop="49dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="@+id/cardView"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/discountToggle_group">
 
@@ -209,36 +213,37 @@
                 tools:layout_editor_absoluteX="5dp"
                 tools:layout_editor_absoluteY="7dp">
 
+
                 <TextView
                     android:id="@+id/invoice_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginLeft="8dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
                     android:text="@string/invoice"
                     android:textColor="@color/grey_40"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="@+id/swapicon"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/swapicon" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/swapicon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_width="26dp"
+                    android:layout_height="34dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
                     android:src="@drawable/ic_swap_vert"
+                    app:layout_constraintBottom_toBottomOf="@+id/invoice_text"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="@+id/invoice_text" />
 
                 <View
                     android:id="@+id/view"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_marginTop="1dp"
-                    android:background="@color/grey_40"
+                    android:layout_marginTop="8dp"
+                    android:background="#D8D5D5"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/swapicon" />
@@ -250,8 +255,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
                     android:text="@string/product1"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/view"></com.google.android.material.checkbox.MaterialCheckBox>
 
@@ -261,7 +267,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/product2"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toTopOf="@+id/product3_checkbox"
                     app:layout_constraintStart_toStartOf="@+id/product1_checkbox"
                     app:layout_constraintTop_toBottomOf="@+id/product1_checkbox"></com.google.android.material.checkbox.MaterialCheckBox>
@@ -272,7 +278,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/product3"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toTopOf="@+id/product4_checkbox"
                     app:layout_constraintStart_toStartOf="@+id/product2_checkbox"
                     app:layout_constraintTop_toBottomOf="@+id/product2_checkbox"></com.google.android.material.checkbox.MaterialCheckBox>
@@ -283,151 +289,172 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/product4"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/product3_checkbox"
                     app:layout_constraintTop_toBottomOf="@+id/product3_checkbox"></com.google.android.material.checkbox.MaterialCheckBox>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInput1"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    android:layout_width="70dp"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="16dp"
+
+                <EditText
+                    android:id="@+id/Input1"
+                    style="@style/EditText.Blue"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_marginRight="8dp"
-                    app:boxStrokeColor="@color/blue_50"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/product1_checkbox"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/view">
+                    app:layout_constraintTop_toTopOf="@+id/product1_checkbox" />
+
+                <EditText
+                    android:id="@+id/Input2"
+                    style="@style/EditText.Blue"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    app:layout_constraintBottom_toTopOf="@+id/Input3"
+                    app:layout_constraintStart_toStartOf="@+id/Input1"
+                    app:layout_constraintTop_toBottomOf="@+id/Input1" />
+
+                <EditText
+                    android:id="@+id/Input3"
+                    style="@style/EditText.Blue"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    app:layout_constraintBottom_toTopOf="@+id/Input4"
+                    app:layout_constraintStart_toStartOf="@+id/Input2"
+                    app:layout_constraintTop_toBottomOf="@+id/Input2" />
 
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputEditText1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInput2"
-                    android:layout_width="70dp"
-                    android:layout_height="30dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textInput3"
-                    app:layout_constraintStart_toStartOf="@+id/textInput1"
-                    app:layout_constraintTop_toBottomOf="@+id/textInput1"
-                    app:boxBackgroundColor="@android:color/transparent"
-                    android:background="@android:color/transparent">
-                    style="@style/ThemeOverlay.Material3.AutoCompleteTextView.FilledBox">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputEditText2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInput3"
-                    android:layout_width="70dp"
-                    android:layout_height="30dp"
-                    app:layout_constraintBottom_toTopOf="@+id/textInput4"
-                    app:layout_constraintStart_toStartOf="@+id/textInput2"
-                    app:layout_constraintTop_toBottomOf="@+id/textInput2">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputEditText3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textInput4"
-                    android:layout_width="70dp"
-                    android:layout_height="30dp"
+                <EditText
+                    android:id="@+id/Input4"
+                    style="@style/EditText.Blue"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/textInput3"
-                    app:layout_constraintTop_toBottomOf="@+id/textInput3">
+                    app:layout_constraintStart_toStartOf="@+id/Input3"
+                    app:layout_constraintTop_toBottomOf="@+id/Input3" />
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/textInputEditText4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-                </com.google.android.material.textfield.TextInputLayout>
 
                 <TextView
                     android:id="@+id/dollar1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/dollar_symbol"
-                    app:layout_constraintBottom_toBottomOf="@+id/textInput1"
-                    app:layout_constraintEnd_toStartOf="@+id/textInput1"
-                    app:layout_constraintTop_toTopOf="@+id/textInput1" />
+                    app:layout_constraintBottom_toBottomOf="@+id/Input1"
+                    app:layout_constraintEnd_toStartOf="@+id/Input1"
+                    app:layout_constraintTop_toTopOf="@+id/Input1" />
 
                 <TextView
                     android:id="@+id/dollar2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/dollar_symbol"
-                    app:layout_constraintBottom_toBottomOf="@+id/textInput2"
-                    app:layout_constraintEnd_toStartOf="@+id/textInput2"
-                    app:layout_constraintTop_toTopOf="@+id/textInput2" />
+                    app:layout_constraintBottom_toBottomOf="@+id/Input2"
+                    app:layout_constraintEnd_toStartOf="@+id/Input2"
+                    app:layout_constraintTop_toTopOf="@+id/Input2" />
 
                 <TextView
                     android:id="@+id/dollar3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/dollar_symbol"
-                    app:layout_constraintBottom_toBottomOf="@+id/textInput3"
-                    app:layout_constraintEnd_toStartOf="@+id/textInput3"
-                    app:layout_constraintTop_toTopOf="@+id/textInput3" />
+                    app:layout_constraintBottom_toBottomOf="@+id/Input3"
+                    app:layout_constraintEnd_toStartOf="@+id/Input3"
+                    app:layout_constraintTop_toTopOf="@+id/Input3" />
 
                 <TextView
                     android:id="@+id/dollar4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/dollar_symbol"
-                    app:layout_constraintBottom_toBottomOf="@+id/textInput4"
-                    app:layout_constraintEnd_toStartOf="@+id/textInput4"
-                    app:layout_constraintTop_toTopOf="@+id/textInput4" />
+                    app:layout_constraintBottom_toBottomOf="@+id/Input4"
+                    app:layout_constraintEnd_toStartOf="@+id/Input4"
+                    app:layout_constraintTop_toTopOf="@+id/Input4" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <com.google.android.material.button.MaterialButtonToggleGroup
             android:id="@+id/discountToggle_group"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="256dp"
+            android:layout_height="55dp"
             android:layout_marginStart="64dp"
             android:layout_marginLeft="64dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
+            app:checkedButton="@id/nodiscount_btn"
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/cardView"
-            app:singleSelection="true"
             app:selectionRequired="true"
-            app:checkedButton="@id/nodiscount_btn">
+            app:singleSelection="true">
 
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/nodiscount_btn"
+                style="@style/Button.Blue.Group"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginStart="112dp"
                 android:layout_marginLeft="112dp"
                 android:text="@string/no_discount"
                 app:layout_constraintStart_toStartOf="@+id/cardView"
-                tools:layout_editor_absoluteY="558dp"
-                style="@style/Button.Blue.Group"
-            />
+                tools:layout_editor_absoluteY="558dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/discount_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Button.Blue.Group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:text="@string/discount"
                 tools:layout_editor_absoluteX="221dp"
-                tools:layout_editor_absoluteY="526dp"
-                style="@style/Button.Blue.Group"
-            />
+                tools:layout_editor_absoluteY="526dp" />
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/calc_btn"
+            style="@style/Button.Outlined.White"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="32dp"
+            android:text="@string/calculate_total_btn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/cardview2"
+            app:layout_constraintTop_toBottomOf="@+id/cardview2" />
+
+        <TextView
+            android:id="@+id/total_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginLeft="32dp"
+            android:text="@string/total"
+            android:textColor="#000000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/calc_btn"
+            app:layout_constraintStart_toEndOf="@+id/calc_btn" />
+
+        <TextView
+            android:id="@+id/total_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp"
+            android:text="@string/dollar_zero"
+            android:textColor="@color/grey_40"
+            android:textSize="18sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/total_text"
+            app:layout_constraintStart_toEndOf="@+id/total_text" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
